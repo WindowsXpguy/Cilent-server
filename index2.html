@@ -1,1 +1,94 @@
-something
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Poppins", Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid white;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.05);
+        }
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+        .light-mode .container {
+            border-color: black;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .light-mode button {
+            background-color: transparent;
+            color: black;
+            border-color: black;
+        }
+        .light-mode button:hover {
+            background-color: black;
+            color: white;
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleMode()">Toggle Light/Dark Mode</button>
+    <div class="container">
+        <h1>Options</h1>
+        <button onclick="window.open('$1', '_blank')">Button 1</button>
+        <button onclick="window.open('$1', '_blank')">Button 2</button>
+        <button onclick="window.open('$1', '_blank')">Button 3</button>
+        <button onclick="window.open('$1', '_blank')">Button 4</button>
+        <div class="footer">
+            <p>Created by: WindowsXPGuy</p>
+            <button onclick="window.open('https://sites.google.com/view/windowsxpguys-coding-hub/home', '_blank')">More Info</button>
+        </div>
+    </div>
+    
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+</html>
