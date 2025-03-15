@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMD Server Start</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: "Courier New", monospace;
+            padding: 20px;
+        }
+        #cmd-window {
+            border: 2px solid lime;
+            padding: 10px;
+            height: 250px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            background-color: black;
+            box-shadow: 0px 0px 10px lime;
+        }
+        button {
+            background-color: black;
+            color: lime;
+            border: 2px solid lime;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: "Courier New", monospace;
+        }
+        button:hover {
+            background-color: lime;
+            color: black;
+        }
+        .cmd-title {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cmd-title">C:\Windows\System32\cmd.exe</div>
+    <div id="cmd-window">C:\Users\User> _</div>
+    <button onclick="startServer()">Start Server</button>
+    
+    <script>
+        function startServer() {
+            const output = document.getElementById('cmd-window');
+            const messages = [
+                'C:\\Users\\User> Initializing server...',
+                'C:\\Users\\User> Loading configuration...',
+                'C:\\Users\\User> Starting services...',
+                'C:\\Users\\User> Server started successfully!'
+            ];
+            
+            output.innerHTML = 'C:\\Users\\User> _';
+            let i = 0;
+            function showNextMessage() {
+                if (i < messages.length) {
+                    output.innerHTML += '\\n' + messages[i];
+                    i++;
+                    setTimeout(showNextMessage, 3000);
+                } else {
+                    setTimeout(() => {
+                        window.location.href = 'index2.html';
+                    }, 15000);
+                }
+            }
+            showNextMessage();
+        }
+    </script>
+</body>
+</html>
